@@ -1,0 +1,52 @@
+Step By Step Process
+
+1) df.head() - prints first 5 rows
+
+📌 Steps to Build the Spam Checker
+Step 1. Setup & Data Understanding
+
+Create your virtual environment
+
+Install packages (numpy, pandas, scikit-learn, etc.)
+
+Load dataset with pandas
+
+Explore label distribution (ham vs spam)
+✅ you’ve already finished this
+
+Step 2. Preprocessing (Text → Numbers)
+
+Use TfidfVectorizer to convert text into numerical features
+
+Understand the shape of the matrix (messages × words)
+🔄 you’re working on this now
+
+Step 3. Train a Baseline Model
+
+Split data into train/test
+
+Train a Logistic Regression model
+
+Check accuracy on test set
+
+Step 4. Evaluate the Model
+
+Print precision, recall, F1-score
+
+Show confusion matrix (where the model makes mistakes)
+
+(Optional) Plot ROC curve
+
+Step 5. Save & Reuse the Model
+
+Save trained model with joblib
+
+Load it back and test on new messages
+
+Step 6. Build a Streamlit App
+
+Make a small UI with a text box
+
+Paste a message → app predicts Spam / Not Spam
+
+Show confidence score + top keywords
