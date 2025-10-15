@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split # split the dataset into pa
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score 
 from sklearn.metrics import classification_report, confusion_matrix
+import joblib
 
 
 df = pd.read_csv("data/SMSSpamCollection", sep="\t", header=None, names=["label","text"])
@@ -36,3 +37,11 @@ print("Accuracy:", accuracy_score(y_test, y_pred))
 # Accuracy = (Number of correct predictions) / (Total predictions)
 
 
+print("classification report: \n")
+
+print(classification_report(y_test, y_pred, target_names=["ham", "spam"]))
+print(confusion_matrix(y_test, y_pred))
+
+joblib.dump(clf, "spam_classifier.joblib")
+print("Model saved as spam_classifier.joblib")
+# saving the model so we dont have to train again
